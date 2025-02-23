@@ -20,7 +20,9 @@ export class NoticeFormComponent {
         Validators.minLength(5)
       ]),
       image: new FormControl("",[]),
-      noticeBody: new FormControl("",[]),
+      noticeBody: new FormControl("",[
+        Validators.required
+      ]),
       date: new FormControl("",[
         Validators.required,
         Validators.pattern(/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/)
@@ -29,10 +31,9 @@ export class NoticeFormComponent {
   }
 
   getNotice() {
-    console.log(this.newNotice)
     this.sendNotice.emit(this.newNotice);
     this.newNotice = {title: "", image: "", noticeBody: "", date: ""};
-  
+    
   }
 
   checkControl(controlName:string, errorName:string): boolean | undefined{
