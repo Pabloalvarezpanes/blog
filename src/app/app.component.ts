@@ -27,5 +27,6 @@ export class AppComponent {
 
   getData(event:INotices):void {
     this.noticeList = [...this.noticeList, event];
+
   }
 }

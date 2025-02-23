@@ -10,4 +10,10 @@ import { INotices } from '../../interfaces/inotices.type=interface';
 export class NoticeListComponent {
   @Input() notices: INotices[] = [];
 
+  ngOnChanges() {
+    this.notices = [...this.notices];
+    console.log(this.notices)
+  }
+
+  
 }
