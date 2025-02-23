@@ -1,21 +1,37 @@
 <h2>¡Inserta tus noticias!</h2>
-<hr>
+<hr />
 <div class="form">
-    <div>
-        <label for="title">Título de la noticia</label>
-        <input id="title" type="text" placeholder="Introduce el titulo de la noticia">
-    </div>
-    <div>
-        <label for="image">Título de la noticia</label>
-        <input id="image" type="text" placeholder="Introduce la URL de la imagen">
-    </div>
-    <div>
-        <label for="noticeBody">Título de la noticia</label>
-        <input id="noticeBody" type="text" placeholder="Introduce el contenido de la noticia">
-    </div>
-    <div>
-        <label for="date">Título de la noticia</label>
-        <input id="date" type="date" placeholder="Introduce la fecha de la noticia">
-    </div>
-    <button>Guardar</button>
+  <div>
+    <label for="title">Título de la noticia</label>
+    <input
+      id="title"
+      type="text"
+      placeholder="Introduce el titulo de la noticia"
+      [(ngModel)]="newNotice.title"
+    />
+  </div>
+  <div>
+    <label for="image">Título de la noticia</label>
+    <input id="image" type="text" placeholder="Introduce la URL de la imagen" 
+    [(ngModel)]="newNotice.image"/>
+  </div>
+  <div>
+    <label for="noticeBody">Título de la noticia</label>
+    <input
+      id="noticeBody"
+      type="text"
+      placeholder="Introduce el contenido de la noticia"
+      [(ngModel)]="newNotice.noticeBody"/>
+    />
+  </div>
+  <div>
+    <label for="date">Título de la noticia</label>
+    <input
+      id="date"
+      type="date"
+      placeholder="Introduce la fecha de la noticia"
+      [(ngModel)]="newNotice.date"/>
+    />
+  </div>
+  <button (click)="getNotice()">Guardar</button>
 </div>
