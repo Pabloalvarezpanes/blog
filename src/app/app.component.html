@@ -4,7 +4,7 @@
 <main>
 <aside class="formulario">
   <!-- Formulario -->
-  <app-notice-form></app-notice-form>
+  <app-notice-form (sendNotice)="getData($event)"></app-notice-form>
 </aside>
 <div class="noticia">
 <article>
