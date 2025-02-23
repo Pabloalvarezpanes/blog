@@ -23,4 +23,8 @@ export class AppComponent {
       date: new Date('20-02-2025')
     }
   ]
+
+  getData(event:INotices):void {
+    this.noticeList = [...this.noticeList, event];
+  }
 }
