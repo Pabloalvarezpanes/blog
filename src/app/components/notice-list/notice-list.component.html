@@ -1,1 +1,14 @@
-<p>notice-list works!</p>
+<div class="lista">
+    @for (notice of notices; track notice.title) {
+    <article>
+        <div>
+        <h3>{{notice.title}}</h3>
+        <figure>
+            <img [src]="notice.image" [alt]="notice.title">
+        </figure>
+        <p>{{notice.noticeBody}}</p>
+        <p>{{notice.date}}</p>
+    </div>
+    </article>
+}
+</div>
