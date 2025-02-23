@@ -9,13 +9,5 @@ import { INotices } from '../../interfaces/inotices.type=interface';
 })
 export class NoticeListComponent {
   @Input() notices: INotices[] = [];
-  texto: string="";
-
-  ngOnChanges() {
-    this.notices.forEach(notice => {
-      this.texto += `<p>${notice.title}</p>`
-    })
-  }
-
 
 }

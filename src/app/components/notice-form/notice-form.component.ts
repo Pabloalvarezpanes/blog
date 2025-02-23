@@ -9,12 +9,12 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './notice-form.component.css'
 })
 export class NoticeFormComponent {
-  newNotice: INotices = {title: "", image: "", noticeBody: "", date: new Date()};
+  newNotice: INotices = {title: "", image: "", noticeBody: "", date: ""};
   @Output() sendNotice: EventEmitter<INotices> = new EventEmitter();
 
   getNotice() {
     console.log(this.newNotice);
     this.sendNotice.emit(this.newNotice);
-    this.newNotice = {title: "", image: "", noticeBody: "", date: new Date()};
+    this.newNotice = {title: "", image: "", noticeBody: "", date: ""};
   }
 }
