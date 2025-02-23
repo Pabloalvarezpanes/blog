@@ -1,19 +1,24 @@
 <h2>¡Inserta tus noticias!</h2>
 <hr />
 <section class="form">
-  <form #noticeForm="ngForm" (ngSubmit)="getNotice(noticeForm)">
+  <form [formGroup]="userForm" (ngSubmit)="getNotice()">
   <div>
     <label for="title">Título de la noticia</label>
     <input
       id="title"
       type="text"
-      placeholder="Introduce el titulo de la noticia"
-      [(ngModel)]="newNotice.title" name="title" ngModel
+      placeholder="Introduce el titulo de la noticia"  formControlName="title" [(ngModel)]="newNotice.title"
       />
+      @if (checkControl('title','required')) {
+      <p class="error">El campo es obligatorio!</p>
+      }
+      @if (checkControl('title','minlength')) {
+      <p class="error">El campo tiene que tener mas de 5 caracteres</p>
+      }
   </div>
   <div>
     <label for="image">URL de la imagen</label>
-    <input id="image" type="text" placeholder="Introduce la URL de la imagen" name="image" ngModel
+    <input id="image" type="text" placeholder="Introduce la URL de la imagen" formControlName="image" [(ngModel)]="newNotice.image"
     />
   </div>
   <div>
@@ -21,19 +26,23 @@
     <input
       id="noticeBody"
       type="text"
-      placeholder="Introduce el contenido de la noticia" name="noticeBody" ngModel
+      placeholder="Introduce el contenido de la noticia" formControlName="noticeBody" [(ngModel)]="newNotice.noticeBody"
       />
+      @if (checkControl('noticeBody','required')) {
+        <p class="error">El campo es obligatorio!</p>
+        }
   </div>
   <div>
     <label for="date">Fecha de la noticia</label>
     <input
       id="date"
       type="text"
-      placeholder="Introduce la fecha de la noticia" name="date" ngModel
+      placeholder="Introduce la fecha de la noticia (DD/MM/YYYY)" [(ngModel)]="newNotice.date" formControlName="date"
       />
+      @if (checkControl('date','pattern')) {
+        <p class="error">El formato de fecha no es correcto</p>
+      }
     </div>
-    <div>
-    <input type="submit" value="Enviar">
-  </div>
+    <button (click)="getNotice()">Enviar</button>
   </form>
 </section>

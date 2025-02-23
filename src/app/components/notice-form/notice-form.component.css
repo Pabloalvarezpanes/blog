@@ -15,6 +15,15 @@ input {
     width: 100%;
 }
 
+input .ng-invalid.ng-touched {
+    border-bottom: 2px solid red;
+}
+
 button {
     padding: 10px;
+}
+
+.form .error{
+    font-size: 80%;
+    color: tomato;
 }
