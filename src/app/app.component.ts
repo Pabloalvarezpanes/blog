@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { INotices } from './interfaces/inotices.type=interface';
 import { NoticeFormComponent } from "./components/notice-form/notice-form.component";
+import { NoticeListComponent } from "./components/notice-list/notice-list.component";
 
 @Component({
   selector: 'app-root',
-  imports: [NoticeFormComponent],
+  imports: [NoticeFormComponent, NoticeListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
