@@ -22,7 +22,7 @@
       type="text"
       placeholder="Introduce el contenido de la noticia"
       [(ngModel)]="newNotice.noticeBody"/>
-    />
+
   </div>
   <div>
     <label for="date">Título de la noticia</label>
@@ -31,7 +31,6 @@
       type="date"
       placeholder="Introduce la fecha de la noticia"
       [(ngModel)]="newNotice.date"/>
-    />
-  </div>
+    />  </div>
   <button (click)="getNotice()">Guardar</button>
 </div>
