@@ -1,36 +1,39 @@
 <h2>¡Inserta tus noticias!</h2>
 <hr />
-<div class="form">
+<section class="form">
+  <form #noticeForm="ngForm" (ngSubmit)="getNotice(noticeForm)">
   <div>
     <label for="title">Título de la noticia</label>
     <input
       id="title"
       type="text"
       placeholder="Introduce el titulo de la noticia"
-      [(ngModel)]="newNotice.title"
+      [(ngModel)]="newNotice.title" name="title" ngModel
+      />
+  </div>
+  <div>
+    <label for="image">URL de la imagen</label>
+    <input id="image" type="text" placeholder="Introduce la URL de la imagen" name="image" ngModel
     />
   </div>
   <div>
-    <label for="image">Título de la noticia</label>
-    <input id="image" type="text" placeholder="Introduce la URL de la imagen" 
-    [(ngModel)]="newNotice.image"/>
-  </div>
-  <div>
-    <label for="noticeBody">Título de la noticia</label>
+    <label for="noticeBody">Cuerpo o descripción de la noticia</label>
     <input
       id="noticeBody"
       type="text"
-      placeholder="Introduce el contenido de la noticia"
-      [(ngModel)]="newNotice.noticeBody"/>
-
+      placeholder="Introduce el contenido de la noticia" name="noticeBody" ngModel
+      />
   </div>
   <div>
-    <label for="date">Título de la noticia</label>
+    <label for="date">Fecha de la noticia</label>
     <input
       id="date"
       type="text"
-      placeholder="Introduce la fecha de la noticia"
-      [(ngModel)]="newNotice.date"/>
+      placeholder="Introduce la fecha de la noticia" name="date" ngModel
+      />
     </div>
-  <button (click)="getNotice()">Guardar</button>
-</div>
+    <div>
+    <input type="submit" value="Enviar">
+  </div>
+  </form>
+</section>
