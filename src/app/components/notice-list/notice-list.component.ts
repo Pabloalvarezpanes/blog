@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { INotices } from '../../interfaces/inotices.type=interface';
 
 @Component({
   selector: 'app-notice-list',
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrl: './notice-list.component.css'
 })
 export class NoticeListComponent {
+  @Input() notices: INotices[] = [];
+  texto: string="";
+
+  ngOnChanges() {
+    this.notices.forEach(notice => {
+      this.texto += `<p>${notice.title}</p>`
+    })
+  }
+
 
 }

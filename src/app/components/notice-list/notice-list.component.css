@@ -1,0 +1,29 @@
+.lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    padding: 20px;
+    text-align: justify;
+}
+.lista h3 {
+    padding: 10px;
+    text-align: justify;
+}
+
+.lista article {
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+@media (width >= 800px) {
+    .lista article {
+        width: calc(70% - 0.625rem);
+    }
+}
+
+@media (width >= 1200px) {
+    .lista article {
+        width: calc(50% - 0.625rem);
+    }
+}
